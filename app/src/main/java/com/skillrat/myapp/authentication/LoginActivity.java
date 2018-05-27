@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
+
+import com.skillrat.myapp.skillrat.MainActivity;
 import com.skillrat.myapp.skillrat.R;
 import android.view.WindowManager;
 import android.widget.TextView;
@@ -32,6 +34,7 @@ public class LoginActivity extends Activity
 
         TextView forgotPwdText=(TextView)findViewById(R.id.link_frgtpwd);
         TextView signupText=(TextView)findViewById(R.id.link_signup);
+        TextView skipText=(TextView)findViewById(R.id.skip);
         forgotPwdText.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -48,6 +51,16 @@ public class LoginActivity extends Activity
             public void onClick(View view)
             {
                 Intent intent= new Intent(context, RegistrationActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        skipText.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Intent intent= new Intent(context, MainActivity.class);
                 startActivity(intent);
             }
         });

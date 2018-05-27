@@ -99,10 +99,9 @@
 
                 <com.skillrat.myapp.utils.LatoRegularTextView
                     android:id="@+id/google_login"
-                    android:layout_width="wrap_content"
+                    android:layout_width="165dp"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-                    android:layout_marginRight="5dp"
                     android:background="@drawable/socialbutton"
                     android:drawableLeft="@drawable/google"
                     android:drawablePadding="5dp"
@@ -124,7 +123,7 @@
 
                 <com.skillrat.myapp.utils.LatoRegularTextView
                     android:id="@+id/facebook_login"
-                    android:layout_width="wrap_content"
+                    android:layout_width="165dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:background="@drawable/socialbutton"
