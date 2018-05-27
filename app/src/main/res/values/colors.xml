@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#8194fa</color>
+    <color name="colorPrimary">#96ddfc</color>
     <color name="colorPrimaryDark">#6276f7</color>
     <color name="colorAccent">#FF4081</color>
     <color name="loginbtntext">#ffffff</color>
@@ -8,7 +8,7 @@
     <color name="textSocialBtn">#262626</color>
     <color name="textLableColor">#00bbff</color>
 
-    <color name="colorNavIcon">#dae9f6</color>
-    <color name="colorNavText">#ffffff</color>
+    <color name="colorNavIcon">#060606</color>
+    <color name="colorNavText">#060606</color>
 
 </resources>
