@@ -25,6 +25,7 @@
             </intent-filter>
         </activity>
         <activity android:name="com.skillrat.myapp.authentication.ForgotPasswordActivity"/>
+        <activity android:name="com.skillrat.myapp.authentication.RegistrationActivity"/>
 
     </application>
 

@@ -31,6 +31,7 @@ public class LoginActivity extends Activity
         setContentView(R.layout.activity_login);
 
         TextView forgotPwdText=(TextView)findViewById(R.id.link_frgtpwd);
+        TextView signupText=(TextView)findViewById(R.id.link_signup);
         forgotPwdText.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -41,5 +42,14 @@ public class LoginActivity extends Activity
             }
         });
 
+        signupText.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Intent intent= new Intent(context, RegistrationActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
