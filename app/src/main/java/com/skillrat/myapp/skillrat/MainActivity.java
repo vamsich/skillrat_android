@@ -10,7 +10,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.skillrat.myapp.fragments.BrowseFragment;
 import com.skillrat.myapp.fragments.HomeFragment;
+import com.skillrat.myapp.fragments.MySessionsFragment;
+import com.skillrat.myapp.fragments.NotificationsFragment;
+import com.skillrat.myapp.fragments.ProfileFragment;
 
 import static android.R.attr.fragment;
 
@@ -52,16 +56,16 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                     fragment= new HomeFragment();
                     break;
                 case R.id.navigation_dashboard:
-                    fragment= new HomeFragment();
+                    fragment= new BrowseFragment();
                     break;
                 case R.id.navigation_sessions:
-                    fragment= new HomeFragment();
+                    fragment= new MySessionsFragment();
                     break;
                 case R.id.navigation_notifications:
-                    fragment= new HomeFragment();
+                    fragment= new NotificationsFragment();
                     break;
                 case R.id.navigation_profile:
-                    fragment= new HomeFragment();
+                    fragment= new ProfileFragment();
                     break;
             }
             return loadFragment(fragment);
