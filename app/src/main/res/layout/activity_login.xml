@@ -1,130 +1,158 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:fitsSystemWindows="true">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="12dp"
+        android:orientation="vertical"
         android:paddingLeft="24dp"
-        android:paddingRight="24dp">
+        android:paddingRight="24dp"
+        android:paddingTop="12dp">
 
-        <TextView android:id="@+id/skip"
+        <com.skillrat.myapp.utils.LatoRegularTextView
+            android:id="@+id/skip"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
-            android:text="SKIP"
             android:gravity="right"
-            android:textSize="16dip"/>
+            android:text="SKIP"
+            android:textSize="16dip" />
 
-        <TextView android:id="@+id/skillratTitle"
+        <com.skillrat.myapp.utils.LatoRegularTextView
+            android:id="@+id/skillratTitle"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
-            android:text="Login to your SkillRat Account"
             android:gravity="center"
-            android:textSize="16dip"/>
+            android:text="Login to your SkillRat Account"
+            android:textSize="16dip" />
 
         <!-- Email Label -->
-        <android.support.design.widget.TextInputLayout
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/input_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="8dp"
-            android:theme="@style/LoginText">
-            <EditText android:id="@+id/input_email"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
-                android:hint="Email Address"
-                android:background="@drawable/edittextshape"/>
-        </android.support.design.widget.TextInputLayout>
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edittextshape"
+            android:hint="Email Address"
+            android:inputType="textEmailAddress"
+            app:met_floatingLabel="highlight"
+            app:met_typeface="fonts/Lato-Regular.ttf" />
 
         <!-- Password Label -->
-        <android.support.design.widget.TextInputLayout
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/input_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="8dp"
-            android:theme="@style/LoginText">
-            <EditText android:id="@+id/input_password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:hint="Password"
-                android:background="@drawable/edittextshape"/>
-        </android.support.design.widget.TextInputLayout>
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edittextshape"
+            android:hint="Password"
+            android:inputType="textPassword"
+            app:met_floatingLabel="highlight"
+            app:met_typeface="fonts/Lato-Regular.ttf" />
 
-        <TextView android:id="@+id/link_frgtpwd"
+        <com.skillrat.myapp.utils.LatoRegularTextView
+            android:id="@+id/link_frgtpwd"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
+            android:gravity="right"
             android:text="Forgot password?"
             android:textColor="@color/textLableColor"
-            android:gravity="right"
-            android:textSize="16dip"/>
+            android:textSize="16dip" />
 
         <android.support.v7.widget.AppCompatButton
             android:id="@+id/btn_login"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
             android:layout_marginBottom="24dp"
+            android:layout_marginTop="24dp"
             android:background="@color/textLableColor"
+            android:bottomLeftRadius="20dp"
+            android:bottomRightRadius="20dp"
             android:padding="12dp"
             android:text="LOG IN"
             android:textColor="@color/loginbtntext"
-            android:bottomRightRadius="20dp"
-            android:bottomLeftRadius="20dp"
             android:topLeftRadius="20dp"
-            android:topRightRadius="20dp"/>
+            android:topRightRadius="20dp" />
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
 
-            <android.support.v7.widget.AppCompatButton
-                android:id="@+id/google_login"
-                android:layout_width="165dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:layout_marginBottom="24dp"
-                android:background="@drawable/socialbutton"
-                android:padding="12dp"
-                android:text="Google"
-                android:gravity="right"
-                android:textColor="@color/textSocialBtn"
-                android:stateListAnimator="@null"/>
 
-            <android.support.v7.widget.AppCompatButton
-                android:id="@+id/facebook_login"
-                android:layout_width="165dp"
+            <RelativeLayout
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:layout_marginBottom="24dp"
-                android:layout_marginLeft="30dp"
-                android:background="@drawable/socialbutton"
-                android:padding="12dp"
-                android:text="Facebook"
-                android:gravity="right"
-                android:textColor="@color/textSocialBtn"
-                android:stateListAnimator="@null"/>
+                android:layout_weight="1">
+
+                <com.skillrat.myapp.utils.LatoRegularTextView
+                    android:id="@+id/google_login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/socialbutton"
+                    android:drawableLeft="@drawable/google"
+                    android:drawablePadding="5dp"
+                    android:gravity="center"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="10dp"
+                    android:stateListAnimator="@null"
+                    android:text="Google"
+                    android:textColor="@color/textSocialBtn"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <com.skillrat.myapp.utils.LatoRegularTextView
+                    android:id="@+id/facebook_login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/socialbutton"
+                    android:drawableLeft="@drawable/facebook"
+                    android:drawablePadding="5dp"
+                    android:gravity="center"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="15dp"
+                    android:paddingTop="10dp"
+                    android:stateListAnimator="@null"
+                    android:text="Facebook"
+                    android:textColor="@color/textSocialBtn"
+                    android:textSize="14sp" />
+            </RelativeLayout>
         </LinearLayout>
 
 
-        <TextView android:id="@+id/link_signup"
+        <com.skillrat.myapp.utils.LatoRegularTextView
+            android:id="@+id/link_signup"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
-            android:text="No account yet? Create one"
             android:gravity="center"
-            android:textSize="16dip"/>
+            android:text="No account yet? Create one"
+            android:textSize="16dip"
+            android:layout_marginTop="10dp"/>
 
 
-        </LinearLayout>
-    </ScrollView>
+    </LinearLayout>
+</ScrollView>
