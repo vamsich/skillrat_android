@@ -5,4 +5,8 @@
     <string name="title_sessions">SESSIONS</string>
     <string name="title_notifications">NOTIFICATIONS</string>
     <string name="title_profile">PROFILE</string>
+    <string name="title_myadds">MyAdds</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
