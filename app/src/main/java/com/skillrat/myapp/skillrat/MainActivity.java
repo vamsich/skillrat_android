@@ -12,10 +12,12 @@ import android.view.MenuItem;
 
 import com.skillrat.myapp.fragments.BrowseFragment;
 import com.skillrat.myapp.fragments.HomeFragment;
+import com.skillrat.myapp.fragments.MyAddsFragment;
 import com.skillrat.myapp.fragments.MySessionsFragment;
 import com.skillrat.myapp.fragments.NotificationsFragment;
 import com.skillrat.myapp.fragments.ProfileFragment;
 
+import static android.R.attr.breadCrumbShortTitle;
 import static android.R.attr.fragment;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener
@@ -64,9 +66,11 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 case R.id.navigation_notifications:
                     fragment= new NotificationsFragment();
                     break;
-                case R.id.navigation_profile:
-                    fragment= new ProfileFragment();
+
+                case R.id.navigation_myadds:
+                    fragment = new MyAddsFragment();
                     break;
+
             }
             return loadFragment(fragment);
         }

@@ -12,7 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.skillrat.myapp.Adapter.MyAddsAdapter;
-import com.skillrat.myapp.Models.MyAdds;
+import com.skillrat.myapp.Models.MyAddsModel.MyAdds;
 import com.skillrat.myapp.skillrat.R;
 
 import java.util.ArrayList;
@@ -36,15 +36,15 @@ public class MyAddsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        myAddsArrayList.add(new MyAdds(1,"Android Programing","Category",4.5f));
-        myAddsArrayList.add(new MyAdds(1,"Web Developement","Category",3.5f));
+        myAddsArrayList.add(new MyAdds(1,"Category","Android App Dev","date",4.5f));
+        myAddsArrayList.add(new MyAdds(2,"Category","Web Dev","date",3.5f));
         View rootView = inflater.inflate(R.layout.fragment_my_adds, container, false);
         recyclerView = (RecyclerView) rootView.findViewById(R.id.recycler_view);
         myAddsAdapter = new MyAddsAdapter(myAddsArrayList);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), LinearLayoutManager.VERTICAL));
+
         recyclerView.setAdapter(myAddsAdapter);
         return rootView ;
     }

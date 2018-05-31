@@ -5,10 +5,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.RatingBar;
 import android.widget.TextView;
 
-import com.skillrat.myapp.Models.MyAdds;
+import com.skillrat.myapp.Models.MyAddsModel.MyAdds;
 import com.skillrat.myapp.skillrat.R;
 
 import java.util.List;
@@ -38,9 +37,10 @@ public class MyAddsAdapter extends RecyclerView.Adapter<MyAddsAdapter.MyViewHold
         MyAdds myAdds = myaddsList.get(position);
        holder.tv_addCategory.setText( myAdds.getAdd_category());
        holder.tv_addTitle.setText(myAdds.getAdd_title());
-       holder.ratingBar_Add.setRating(myAdds.getAdd_rating());
+       holder.tv_addrating.setText(""+myAdds.getAdd_rating());
+       holder.tv_adddate.setText(""+myAdds.getDateTimeInString());
         // todo  MyAddsAdapter By using picasso we set Image here
-        holder.img_add.setImageResource(R.mipmap.ic_launcher);
+        holder.img_add.setImageResource(R.drawable.icons8_google_48);
     }
 
     @Override
@@ -51,15 +51,16 @@ public class MyAddsAdapter extends RecyclerView.Adapter<MyAddsAdapter.MyViewHold
 
     // ViewHolder Class
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView  tv_addTitle,tv_addCategory;
-        public RatingBar ratingBar_Add;
+        public TextView  tv_addTitle,tv_addCategory,tv_addrating,tv_adddate;
+
         public ImageView img_add;
 
         public MyViewHolder(View view) {
             super(view);
             tv_addTitle = (TextView) view.findViewById(R.id.tv_addtitle);
             tv_addCategory = (TextView) view.findViewById(R.id.tv_addcategory);
-            ratingBar_Add = (RatingBar) view.findViewById(R.id.ratingbar_add);
+            tv_addrating = (TextView) view.findViewById(R.id.tv_addrating);
+            tv_adddate = (TextView) view.findViewById(R.id.tv_adddate);
             img_add = (ImageView) view.findViewById(R.id.img_add);
 
         }
