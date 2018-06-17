@@ -1,0 +1,105 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/card_margin"
+        android:elevation="3dp"
+        card_view:cardCornerRadius="@dimen/card_album_radius">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/complete_session_img"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:layout_gravity="center"
+                android:background="@color/cardview_dark_background"
+                android:layout_weight="1"
+                />
+
+
+            <LinearLayout
+                android:id="@+id/ll_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:orientation="vertical"
+                android:layout_weight="0.6"
+                >
+
+                <TextView
+                    android:id="@+id/complete_session_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:minLines="1"
+                    android:maxLines="1"
+                    android:text="Advance Android Session"
+                    android:textSize="18sp" />
+
+
+                <TextView
+                    android:id="@+id/complete_session_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/complete_session_title"
+                    android:layout_toRightOf="@id/complete_session_img"
+                    android:minLines="4"
+                    android:maxLines="4"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="5dp"
+                    android:textSize="12dp"
+                    android:text="efg" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp">
+
+                    <RatingBar
+                        android:id="@+id/complete_session_ratingbar"
+                        style="?android:attr/ratingBarStyleSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:isIndicator="false"
+                        android:numStars="5"
+                        android:paddingTop="10dp"
+                        android:layout_marginLeft="10dp"/>
+
+                    <Button
+                        android:id="@+id/complete_session_view"
+                        android:layout_width="60dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginBottom="2dp"
+                        android:layout_alignParentRight="true"
+                        android:background="#20658C"
+                        android:text="view"
+                        android:textColor="#fff"
+                        android:textAllCaps="true"
+                        android:layout_marginRight="5dp"
+                         />
+
+                </RelativeLayout>
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

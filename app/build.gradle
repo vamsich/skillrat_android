@@ -32,5 +32,13 @@ dependencies {
     compile 'com.rengwuxian.materialedittext:library:2.1.4'
     implementation 'de.hdodenhof:circleimageview:2.2.0'
 
+    //GSON with Retrofit
+    compile 'com.google.code.gson:gson:2.6.2'
+    compile 'com.squareup.retrofit2:retrofit:2.0.2'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.2'
+
+    //for picasso
+    compile 'com.squareup.picasso:picasso:2.5.2'
+
     testCompile 'junit:junit:4.12'
 }
