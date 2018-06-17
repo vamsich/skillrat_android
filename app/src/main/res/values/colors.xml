@@ -12,4 +12,8 @@
     <color name="colorNavText">#060606</color>
     <color name="viewBg">#f1f5f8</color>
     <color name="album_title">#4c4c4c</color>
+
+
+    <color name="sideNavBarColor">#24658c</color>
+    <color name="sideNavBarBottomColor">#dedddd</color>
 </resources>

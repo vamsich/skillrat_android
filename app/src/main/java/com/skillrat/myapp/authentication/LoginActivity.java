@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
 
+import com.skillrat.myapp.DrawerActivity;
 import com.skillrat.myapp.skillrat.MainActivity;
 import com.skillrat.myapp.skillrat.R;
 import android.view.WindowManager;
@@ -60,7 +61,7 @@ public class LoginActivity extends Activity
             @Override
             public void onClick(View view)
             {
-                Intent intent= new Intent(context, MainActivity.class);
+                Intent intent= new Intent(context, DrawerActivity.class);
                 startActivity(intent);
             }
         });

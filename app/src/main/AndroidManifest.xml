@@ -10,13 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
-            <!-- <intent-filter>
+
+            <!--
+             <intent-filter>
                  <action android:name="android.intent.action.MAIN" />
 
                  <category android:name="android.intent.category.LAUNCHER" />
-             </intent-filter>-->
+             </intent-filter>
+            -->
         </activity>
-
         <activity android:name="com.skillrat.myapp.authentication.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,9 +26,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.skillrat.myapp.authentication.ForgotPasswordActivity"/>
-        <activity android:name="com.skillrat.myapp.authentication.RegistrationActivity"/>
+        <activity android:name="com.skillrat.myapp.authentication.ForgotPasswordActivity" />
+        <activity android:name="com.skillrat.myapp.authentication.RegistrationActivity" />
+        <activity
+            android:name="com.skillrat.myapp.DrawerActivity"
+            android:label="@string/title_activity_drawer"
+            android:theme="@style/AppTheme.NoActionBar">
 
+
+        </activity>
     </application>
 
 </manifest>
