@@ -16,4 +16,5 @@
 
     <color name="sideNavBarColor">#24658c</color>
     <color name="sideNavBarBottomColor">#dedddd</color>
+    <color name="colorBlack">#000</color>
 </resources>

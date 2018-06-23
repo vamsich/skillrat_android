@@ -18,6 +18,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.skillrat.myapp.TabLayout.TabLayoutMain;
 import com.skillrat.myapp.fragments.BrowseFragment;
 import com.skillrat.myapp.fragments.HomeFragment;
 import com.skillrat.myapp.fragments.MyAddsFragment;
@@ -48,6 +49,7 @@ public class DrawerActivity extends AppCompatActivity
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(this);
+        navigation.getMenu().getItem(2).setChecked(true);
 
         Fragment fragmentName = null;
         Fragment MapFragment = new CourseSessionFragment();
@@ -100,6 +102,7 @@ public class DrawerActivity extends AppCompatActivity
         Fragment MySessionsFragment = new MySessionsFragment();
         Fragment NotificationsFragment = new NotificationsFragment();
         Fragment MyAddsFragment = new MyAddsFragment();
+        Fragment TabLayoutMain = new TabLayoutMain();
 
         int id = item.getItemId();
 
@@ -108,7 +111,8 @@ public class DrawerActivity extends AppCompatActivity
         } else if (id == R.id.nav_session_traning) {
 
         } else if (id == R.id.nav_my_session) {
-
+            fragmentName = TabLayoutMain;
+            replaceFragment(fragmentName);
         } else if (id == R.id.nav_payment) {
 
         } else if (id == R.id.nav_about_us) {
@@ -122,13 +126,12 @@ public class DrawerActivity extends AppCompatActivity
         } else if (id == R.id.nav_log_out) {
 
         } else if (id == R.id.navigation_home) {
-            fragmentName = CourseSessionFragment;
-            replaceFragment(fragmentName);
+
         } else if (id == R.id.navigation_dashboard) {
-            fragmentName = BrowseFragment;
+            fragmentName = MySessionsFragment;
             replaceFragment(fragmentName);
         } else if (id == R.id.navigation_sessions) {
-            fragmentName = MySessionsFragment;
+            fragmentName = CourseSessionFragment;
             replaceFragment(fragmentName);
         } else if (id == R.id.navigation_notifications) {
             fragmentName = NotificationsFragment;
