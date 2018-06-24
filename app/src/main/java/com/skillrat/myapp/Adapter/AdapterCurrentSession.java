@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
@@ -34,6 +35,7 @@ public class AdapterCurrentSession extends RecyclerView.Adapter<AdapterCurrentSe
         public CardView mCardView;
         public TextView tv_instructor_name, tv_instructor_qualification, tv_instructor_course_starting_date, tv_instructor_course_duration, tv_instructor_course_price, tv_instructor_course_discounted_price;
         public RatingBar tv_instructor_rating;
+        public Button btn_feedback;
 
         public MyViewHolder(View v) {
             super(v);
@@ -45,8 +47,9 @@ public class AdapterCurrentSession extends RecyclerView.Adapter<AdapterCurrentSe
             tv_instructor_course_duration = (TextView) v.findViewById(R.id.tv_instructor_course_duration);
             tv_instructor_course_price = (TextView) v.findViewById(R.id.tv_instructor_course_price);
             tv_instructor_course_discounted_price = (TextView) v.findViewById(R.id.tv_instructor_course_discounted_price);
+            btn_feedback = (Button) v.findViewById(R.id.btn_feedback);
             tv_instructor_rating = (RatingBar) v.findViewById(R.id.tv_instructor_rating);
-            itemView.setOnClickListener(this);
+            btn_feedback.setOnClickListener(this);
 
         }
 

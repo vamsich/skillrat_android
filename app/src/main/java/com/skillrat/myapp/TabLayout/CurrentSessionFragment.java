@@ -11,6 +11,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.skillrat.myapp.Adapter.AdapterCurrentSession;
 import com.skillrat.myapp.Models.MyAddsModel.CurrentAndPastSession;
@@ -62,6 +63,8 @@ public class CurrentSessionFragment extends Fragment implements AdapterCurrentSe
 
     @Override
     public void onClick(View view, int position) {
+
+        Toast.makeText(getActivity(),"Feedback",Toast.LENGTH_LONG);
 
        /* Fragment fragmentName = null;
         Fragment CompletedJobDetailFragment = new CompletedJobDetailFragment();
