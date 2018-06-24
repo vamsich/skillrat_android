@@ -17,6 +17,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.RatingBar;
 
 import com.skillrat.myapp.TabLayout.TabLayoutMain;
 import com.skillrat.myapp.fragments.BrowseFragment;
@@ -29,6 +30,7 @@ import com.skillrat.myapp.skillrat.R;
 public class DrawerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, BottomNavigationView.OnNavigationItemSelectedListener {
 
+    RatingBar tv_instructor_rating;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +52,9 @@ public class DrawerActivity extends AppCompatActivity
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(this);
         navigation.getMenu().getItem(2).setChecked(true);
+
+        tv_instructor_rating = (RatingBar) findViewById(R.id.tv_instructor_rating);
+        tv_instructor_rating.setRating(Float.parseFloat("4.5"));
 
         Fragment fragmentName = null;
         Fragment MapFragment = new CourseSessionFragment();
