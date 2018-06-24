@@ -1,6 +1,6 @@
 package com.skillrat.myapp.api;
 
-import com.skillrat.myapp.SessionsModel.Session;
+import com.skillrat.myapp.BrowseModel.Browse;
 
 import java.util.List;
 
@@ -18,5 +18,5 @@ public interface ApiService {
     And our method that will return us the List of CoursesList
     */
     @GET("/course/by-category")
-    Call<List<Session>> getMyJSON();
+    Call<List<Browse>> getMyJSON();
 }

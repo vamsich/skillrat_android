@@ -7,41 +7,32 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_complete_traning"
-            android:icon="@drawable/ic_complete_traning"
             android:title="Complete Traning" />
         <item
             android:id="@+id/nav_session_traning"
-            android:icon="@drawable/ic_session_traning"
             android:title="Session Traning" />
         <item
             android:id="@+id/nav_my_session"
-            android:icon="@drawable/ic_my_session"
             android:title="My Session" />
         <item
             android:id="@+id/nav_payment"
-            android:icon="@drawable/ic_payment"
             android:title="Payment" />
 
         <item
             android:id="@+id/nav_about_us"
-            android:icon="@drawable/ic_about"
             android:title="About Us" />
         <item
             android:id="@+id/nav_privacy_policy"
-            android:icon="@drawable/ic_privacy"
             android:title="Privacy Policy" />
         <item
             android:id="@+id/nav_feedback"
-            android:icon="@drawable/ic_feedback"
             android:title="Feedback" />
         <item
             android:id="@+id/nav_help_and_support"
-            android:icon="@drawable/ic_help_and_support"
             android:title="Help And Support" />
 
         <item
             android:id="@+id/nav_log_out"
-            android:icon="@drawable/ic_logout"
             android:title="Logout" />
     </group>
 </menu>

@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
-import com.skillrat.myapp.SessionsModel.Session;
+import com.skillrat.myapp.BrowseModel.Browse;
 import com.skillrat.myapp.skillrat.R;
 import com.squareup.picasso.Picasso;
 
@@ -21,10 +21,10 @@ import java.util.List;
  */
 
 public class SessionsAdapter extends RecyclerView.Adapter<SessionsAdapter.CustomViewHolder> {
-    private List<Session> courses;
+    private List<Browse> courses;
     Context context;
 
-    public SessionsAdapter(Context context, List<Session> employees) {
+    public SessionsAdapter(Context context, List<Browse> employees) {
         this.context = context;
         this.courses = employees;
     }
@@ -39,11 +39,11 @@ public class SessionsAdapter extends RecyclerView.Adapter<SessionsAdapter.Custom
 
     @Override
     public void onBindViewHolder(CustomViewHolder holder, int position) {
-        Session c = courses.get(position);
+        Browse c = courses.get(position);
         Log.d("PARAMS","ID: "+c.getId()+"Description: "+c.getDescription());
 
         Picasso.with(context).load(c.getLogo()).fit().into(holder.complete_session_img);
-        //holder.complete_session_title.setText(c.getId().toString());
+        holder.complete_session_title.setText(c.getTitle());
         holder.complete_session_content.setText(c.getDescription());
         holder.complete_session_ratingbar.setRating(Float.parseFloat(c.getRating()));
 
@@ -62,6 +62,7 @@ public class SessionsAdapter extends RecyclerView.Adapter<SessionsAdapter.Custom
         public CustomViewHolder(View view) {
             super(view);
             complete_session_img = (ImageView) view.findViewById(R.id.complete_session_img);
+            complete_session_title = (TextView) view.findViewById(R.id.complete_session_title);
             complete_session_content = (TextView) view.findViewById(R.id.complete_session_content);
             complete_session_ratingbar= (RatingBar) view.findViewById(R.id.complete_session_ratingbar);
 

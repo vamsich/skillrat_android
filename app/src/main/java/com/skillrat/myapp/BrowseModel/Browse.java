@@ -1,4 +1,4 @@
-package com.skillrat.myapp.SessionsModel;
+package com.skillrat.myapp.BrowseModel;
 
 /**
  * Created by Abhi on 06 Sep 2017 006.
@@ -8,10 +8,13 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 
-public class Session {
+public class Browse {
     @SerializedName("id")
     @Expose
     private Integer Id;
+    @SerializedName("title")
+    @Expose
+    private String title;
     @SerializedName("description")
     @Expose
     private String description;
@@ -22,6 +25,12 @@ public class Session {
     @Expose
     private String logo;
 
+    public String getTitle() {
+        return title;
+    }
+    public void setTitle(String title) {
+        this.title = title;
+    }
     public Integer getId() {
         return Id;
     }
