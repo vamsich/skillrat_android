@@ -17,7 +17,7 @@
         android:id="@+id/imageView"
         android:layout_width="96dp"
         android:layout_height="96dp"
-        android:src="@drawable/google"
+        android:src="@drawable/dp"
         app:civ_border_width="1dp"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         app:civ_border_color="#FF000000"/>
