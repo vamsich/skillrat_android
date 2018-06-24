@@ -7,32 +7,41 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_complete_traning"
-            android:title="Complete Traning" />
+            android:title="Complete Traning"
+             android:icon="@drawable/ic_complete_traning"/>
         <item
             android:id="@+id/nav_session_traning"
-            android:title="Session Traning" />
+            android:title="Session Traning"
+            android:icon="@drawable/ic_session_traning"/>
         <item
             android:id="@+id/nav_my_session"
-            android:title="My Session" />
+            android:title="My Session"
+            android:icon="@drawable/ic_my_session"/>
         <item
             android:id="@+id/nav_payment"
-            android:title="Payment" />
+            android:title="Payment"
+            android:icon="@drawable/ic_payment"/>
 
         <item
             android:id="@+id/nav_about_us"
-            android:title="About Us" />
+            android:title="About Us"
+            android:icon="@drawable/ic_about"/>
         <item
             android:id="@+id/nav_privacy_policy"
-            android:title="Privacy Policy" />
+            android:title="Privacy Policy"
+            android:icon="@drawable/ic_privacy"/>
         <item
             android:id="@+id/nav_feedback"
-            android:title="Feedback" />
+            android:title="Feedback"
+            android:icon="@drawable/ic_feedback"/>
         <item
             android:id="@+id/nav_help_and_support"
-            android:title="Help And Support" />
+            android:title="Help And Support"
+            android:icon="@drawable/ic_help_and_support"/>
 
         <item
             android:id="@+id/nav_log_out"
-            android:title="Logout" />
+            android:title="Logout"
+            android:icon="@drawable/ic_logout"/>
     </group>
 </menu>
