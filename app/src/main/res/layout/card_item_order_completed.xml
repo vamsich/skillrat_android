@@ -63,7 +63,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="10dp"
                         android:layout_weight="0.5"
-                        android:max="5"
+                        android:numStars="5"
                         android:padding="2dp" />
 
 
@@ -109,6 +109,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="5$ * 70% off"
+                            android:maxLines="2"
                             android:textColor="@android:color/holo_red_dark" />
 
                     </LinearLayout>
@@ -126,6 +127,7 @@
                             android:layout_height="wrap_content"
                             android:background="#43d939"
                             android:text="Feedback"
+                            android:layout_gravity="bottom|right"
                             android:textColor="@android:color/white" />
 
                     </LinearLayout>

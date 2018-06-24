@@ -63,6 +63,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="10dp"
                         android:layout_weight="0.5"
+                        android:numStars="5"
                         android:padding="2dp" />
 
 
