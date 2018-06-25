@@ -6,11 +6,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.skillrat.myapp.Models.MyAddsModel.CurrentAndPastSession;
 import com.skillrat.myapp.skillrat.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -24,6 +26,7 @@ public class AdapterPastSession extends RecyclerView.Adapter<AdapterPastSession.
         public CardView mCardView;
         public TextView tv_instructor_name, tv_instructor_qualification, tv_instructor_course_starting_date, tv_instructor_course_duration, tv_instructor_course_price, tv_instructor_course_discounted_price;
         public RatingBar tv_instructor_rating;
+        ImageView img_dp_past;
 
         public MyViewHolder(View v) {
             super(v);
@@ -35,6 +38,7 @@ public class AdapterPastSession extends RecyclerView.Adapter<AdapterPastSession.
             tv_instructor_course_price = (TextView) v.findViewById(R.id.tv_instructor_course_price);
             tv_instructor_course_discounted_price = (TextView) v.findViewById(R.id.tv_instructor_course_discounted_price);
             tv_instructor_rating = (RatingBar) v.findViewById(R.id.tv_instructor_rating);
+            img_dp_past = (ImageView) v.findViewById(R.id.img_dp_past);
         }
 
     }
@@ -54,6 +58,7 @@ public class AdapterPastSession extends RecyclerView.Adapter<AdapterPastSession.
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         CurrentAndPastSession current = arrayList.get(position);
+        Picasso.with(acontext).load(current.getInstructor_image()).into(holder.img_dp_past);
         holder.tv_instructor_name.setText(current.getInstructor_name());
         holder.tv_instructor_qualification.setText("Qualification : "+current.getInstructor_qualification());
         holder.tv_instructor_course_starting_date.setText("Starting Date : "+current.getInstructor_course_starting_date());

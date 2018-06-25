@@ -1,7 +1,10 @@
 package com.skillrat.myapp.api;
 
 import com.skillrat.myapp.BrowseModel.Browse;
+import com.skillrat.myapp.Models.MyAddsModel.CurrentAndPastSession;
+import com.skillrat.myapp.Models.MyAddsModel.RecommendedCourses;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -20,5 +23,22 @@ public interface ApiService {
     @GET("/bycategory")
     Call<List<Browse>> getMyJSON();
 
+    /************************************/
+
+    @GET("/recommendedsession")
+    Call<ArrayList<RecommendedCourses>> getMyJSONRecommendCourses();
+
+
+    @GET("/ondemandsession")
+    Call<ArrayList<RecommendedCourses>> getMyJSONOnDemandCourses();
+
+
+
+    @GET("/pastsession")
+    Call<ArrayList<CurrentAndPastSession>> getMyJSONOnPastSession();
+
+
+    @GET("/currentsession")
+    Call<ArrayList<CurrentAndPastSession>> getMyJSONOnCurrentSession();
 
 }

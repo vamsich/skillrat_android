@@ -1,5 +1,8 @@
 package com.skillrat.myapp.Models.MyAddsModel;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -8,13 +11,51 @@ import org.json.JSONObject;
  */
 
 public class RecommendedCourses {
+
+
+    @SerializedName("id")
+    @Expose
+    private Integer Id;
+    @SerializedName("name")
+    @Expose
     String instructor_name;
+    @SerializedName("qualification")
+    @Expose
     String instructor_qualification;
+    @SerializedName("price")
+    @Expose
     String instructor_course_price;
+    @SerializedName("discountedPrice")
+    @Expose
     String instructor_course_discounted_price;
+    @SerializedName("startingDate")
+    @Expose
     String instructor_course_starting_date;
+    @SerializedName("durationCourse")
+    @Expose
     String instructor_course_duration;
+    @SerializedName("rating")
+    @Expose
     String instructor_rating;
+    @SerializedName("cover")
+    @Expose
+    String course_image_cover;
+
+    public Integer getId() {
+        return Id;
+    }
+
+    public void setId(Integer id) {
+        Id = id;
+    }
+
+    public String getCourse_image_cover() {
+        return course_image_cover;
+    }
+
+    public void setCourse_image_cover(String course_image_cover) {
+        this.course_image_cover = course_image_cover;
+    }
 
     public String getInstructor_name() {
         return instructor_name;

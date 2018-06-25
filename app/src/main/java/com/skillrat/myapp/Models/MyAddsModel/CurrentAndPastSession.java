@@ -1,17 +1,40 @@
 package com.skillrat.myapp.Models.MyAddsModel;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 /**
  * Created by Maryam on 6/23/2018.
  */
 
 public class CurrentAndPastSession {
+
+    @SerializedName("id")
+    @Expose
+    private Integer Id;
+    @SerializedName("name")
+    @Expose
     String instructor_name;
+    @SerializedName("qualification")
+    @Expose
     String instructor_qualification;
+    @SerializedName("price")
+    @Expose
     String instructor_course_price;
+    @SerializedName("discountedPrice")
+    @Expose
     String instructor_course_discounted_price;
+    @SerializedName("startingDate")
+    @Expose
     String instructor_course_starting_date;
+    @SerializedName("durationCourse")
+    @Expose
     String instructor_course_duration;
+    @SerializedName("rating")
+    @Expose
     String instructor_rating;
+    @SerializedName("cover")
+    @Expose
     String instructor_image;
 
 

@@ -6,13 +6,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Filter;
-import android.widget.Filterable;
+import android.widget.ImageView;
 import android.widget.TextView;
-
 
 import com.skillrat.myapp.Models.MyAddsModel.RecommendedCourses;
 import com.skillrat.myapp.skillrat.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -22,11 +21,11 @@ public class AdapterInDemandSession extends RecyclerView.Adapter<AdapterInDemand
     private ArrayList<RecommendedCourses> arrayList;
 
 
-
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
         public CardView mCardView;
-        public TextView tv_instructor_name, tv_instructor_qualification, tv_instructor_course_price,tv_instructor_course_discounted_price, tv_instructor_course_starting_date, tv_instructor_course_duration, tv_instructor_rating;
+        public TextView tv_instructor_name, tv_instructor_qualification, tv_instructor_course_price, tv_instructor_course_discounted_price, tv_instructor_course_starting_date, tv_instructor_course_duration, tv_instructor_rating;
+        ImageView img_in_demand_courses;
 
         public MyViewHolder(View v) {
             super(v);
@@ -38,6 +37,8 @@ public class AdapterInDemandSession extends RecyclerView.Adapter<AdapterInDemand
             tv_instructor_course_duration = (TextView) v.findViewById(R.id.tv_instructor_course_duration);
             tv_instructor_rating = (TextView) v.findViewById(R.id.tv_instructor_rating);
             tv_instructor_course_discounted_price = (TextView) v.findViewById(R.id.tv_instructor_course_discounted_price);
+            img_in_demand_courses = (ImageView) v.findViewById(R.id.img_in_demand_courses);
+
         }
 
     }
@@ -57,6 +58,7 @@ public class AdapterInDemandSession extends RecyclerView.Adapter<AdapterInDemand
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         RecommendedCourses current = arrayList.get(position);
+        Picasso.with(acontext).load(current.getCourse_image_cover()).into(holder.img_in_demand_courses);
         holder.tv_instructor_name.setText(current.getInstructor_name());
         holder.tv_instructor_qualification.setText(current.getInstructor_qualification());
         holder.tv_instructor_course_price.setText(current.getInstructor_course_price());

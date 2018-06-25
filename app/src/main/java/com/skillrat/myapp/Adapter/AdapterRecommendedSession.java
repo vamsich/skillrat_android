@@ -6,11 +6,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
-
+import android.widget.Toast;
 
 import com.skillrat.myapp.Models.MyAddsModel.RecommendedCourses;
 import com.skillrat.myapp.skillrat.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -22,7 +24,8 @@ public class AdapterRecommendedSession extends RecyclerView.Adapter<AdapterRecom
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
         public CardView mCardView;
-        public TextView tv_instructor_name, tv_instructor_qualification, tv_instructor_course_price,tv_instructor_course_discounted_price, tv_instructor_course_starting_date, tv_instructor_course_duration, tv_instructor_rating;
+        public TextView tv_instructor_name, tv_instructor_qualification, tv_instructor_course_price, tv_instructor_course_discounted_price, tv_instructor_course_starting_date, tv_instructor_course_duration, tv_instructor_rating;
+        ImageView img_recommended_courses;
 
         public MyViewHolder(View v) {
             super(v);
@@ -34,6 +37,7 @@ public class AdapterRecommendedSession extends RecyclerView.Adapter<AdapterRecom
             tv_instructor_course_duration = (TextView) v.findViewById(R.id.tv_instructor_course_duration);
             tv_instructor_rating = (TextView) v.findViewById(R.id.tv_instructor_rating);
             tv_instructor_course_discounted_price = (TextView) v.findViewById(R.id.tv_instructor_course_discounted_price);
+            img_recommended_courses = (ImageView) v.findViewById(R.id.img_recommended_courses);
         }
 
     }
@@ -53,6 +57,7 @@ public class AdapterRecommendedSession extends RecyclerView.Adapter<AdapterRecom
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         RecommendedCourses current = arrayList.get(position);
+        Picasso.with(acontext).load(current.getCourse_image_cover()).into(holder.img_recommended_courses);
         holder.tv_instructor_name.setText(current.getInstructor_name());
         holder.tv_instructor_qualification.setText(current.getInstructor_qualification());
         holder.tv_instructor_course_price.setText(current.getInstructor_course_price());
@@ -60,6 +65,8 @@ public class AdapterRecommendedSession extends RecyclerView.Adapter<AdapterRecom
         holder.tv_instructor_course_duration.setText(current.getInstructor_course_duration());
         holder.tv_instructor_rating.setText(current.getInstructor_rating());
         holder.tv_instructor_course_discounted_price.setText(current.getInstructor_course_discounted_price());
+        //Toast.makeText(acontext,""+current.getCourse_image_cover(),Toast.LENGTH_LONG).show();
+
     }
 
     @Override

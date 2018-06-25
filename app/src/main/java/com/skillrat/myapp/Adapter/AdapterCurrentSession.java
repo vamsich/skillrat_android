@@ -7,11 +7,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.skillrat.myapp.Models.MyAddsModel.CurrentAndPastSession;
 import com.skillrat.myapp.skillrat.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -36,6 +38,7 @@ public class AdapterCurrentSession extends RecyclerView.Adapter<AdapterCurrentSe
         public TextView tv_instructor_name, tv_instructor_qualification, tv_instructor_course_starting_date, tv_instructor_course_duration, tv_instructor_course_price, tv_instructor_course_discounted_price;
         public RatingBar tv_instructor_rating;
         public Button btn_feedback;
+        ImageView img_dp_current;
 
         public MyViewHolder(View v) {
             super(v);
@@ -48,6 +51,7 @@ public class AdapterCurrentSession extends RecyclerView.Adapter<AdapterCurrentSe
             tv_instructor_course_price = (TextView) v.findViewById(R.id.tv_instructor_course_price);
             tv_instructor_course_discounted_price = (TextView) v.findViewById(R.id.tv_instructor_course_discounted_price);
             btn_feedback = (Button) v.findViewById(R.id.btn_feedback);
+            img_dp_current = (ImageView) v.findViewById(R.id.img_dp_current);
             tv_instructor_rating = (RatingBar) v.findViewById(R.id.tv_instructor_rating);
             btn_feedback.setOnClickListener(this);
 
@@ -76,6 +80,7 @@ public class AdapterCurrentSession extends RecyclerView.Adapter<AdapterCurrentSe
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         CurrentAndPastSession current = arrayList.get(position);
+        Picasso.with(acontext).load(current.getInstructor_image()).into(holder.img_dp_current);
         holder.tv_instructor_name.setText(current.getInstructor_name());
         holder.tv_instructor_qualification.setText("Qualification : "+current.getInstructor_qualification());
         holder.tv_instructor_course_starting_date.setText("Starting Date : "+current.getInstructor_course_starting_date());
