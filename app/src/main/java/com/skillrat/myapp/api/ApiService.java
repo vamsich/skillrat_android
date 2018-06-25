@@ -17,6 +17,8 @@ public interface ApiService {
     Retrofit get annotation with our URL
     And our method that will return us the List of CoursesList
     */
-    @GET("/course/by-category")
+    @GET("/bycategory")
     Call<List<Browse>> getMyJSON();
+
+
 }

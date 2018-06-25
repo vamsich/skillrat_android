@@ -53,9 +53,9 @@ public class DrawerActivity extends AppCompatActivity
         navigation.setOnNavigationItemSelectedListener(this);
         navigation.getMenu().getItem(2).setChecked(true);
 
-        tv_instructor_rating = (RatingBar) findViewById(R.id.tv_instructor_rating);
+       /* tv_instructor_rating = (RatingBar) findViewById(R.id.tv_instructor_rating);
         tv_instructor_rating.setRating(Float.parseFloat("4.5"));
-
+*/
         Fragment fragmentName = null;
         Fragment MapFragment = new CourseSessionFragment();
         fragmentName = MapFragment;
@@ -133,7 +133,7 @@ public class DrawerActivity extends AppCompatActivity
         } else if (id == R.id.navigation_home) {
 
         } else if (id == R.id.navigation_dashboard) {
-            fragmentName = MySessionsFragment;
+            fragmentName = BrowseFragment;
             replaceFragment(fragmentName);
         } else if (id == R.id.navigation_sessions) {
             fragmentName = CourseSessionFragment;

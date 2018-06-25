@@ -14,7 +14,7 @@ public class RetroClient {
     /********
      * URLS
      *******/
-    private static final String ROOT_URL = "https://private-2dbd17-skillpay.apiary-mock.com";
+    private static final String ROOT_URL = "http://demo8680839.mockable.io";
 
     /**
      * Get Retrofit Instance
