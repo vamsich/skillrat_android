@@ -3,13 +3,10 @@ package com.skillrat.myapp;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.view.View;
-import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -17,20 +14,23 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.RatingBar;
 
 import com.skillrat.myapp.TabLayout.TabLayoutMain;
 import com.skillrat.myapp.fragments.BrowseFragment;
-import com.skillrat.myapp.fragments.HomeFragment;
 import com.skillrat.myapp.fragments.MyAddsFragment;
 import com.skillrat.myapp.fragments.MySessionsFragment;
 import com.skillrat.myapp.fragments.NotificationsFragment;
 import com.skillrat.myapp.skillrat.R;
 
 public class DrawerActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, BottomNavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, BottomNavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
     RatingBar tv_instructor_rating;
+    ImageView img_add, img_course_search, img_home_page, img_notification, img_adds;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,9 +49,21 @@ public class DrawerActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+
+        img_add = (ImageView) findViewById(R.id.img_add);
+        img_course_search = (ImageView) findViewById(R.id.img_course_search);
+        img_home_page = (ImageView) findViewById(R.id.img_home_page);
+        img_notification = (ImageView) findViewById(R.id.img_notification);
+        img_adds = (ImageView) findViewById(R.id.img_adds);
+
+        img_add.setOnClickListener(this);
+        img_course_search.setOnClickListener(this);
+        img_notification.setOnClickListener(this);
+        img_home_page.setOnClickListener(this);
+        img_adds.setOnClickListener(this);
+      /*  BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(this);
-        navigation.getMenu().getItem(2).setChecked(true);
+        navigation.getMenu().getItem(2).setChecked(true);*/
 
        /* tv_instructor_rating = (RatingBar) findViewById(R.id.tv_instructor_rating);
         tv_instructor_rating.setRating(Float.parseFloat("4.5"));
@@ -132,7 +144,7 @@ public class DrawerActivity extends AppCompatActivity
 
         } else if (id == R.id.navigation_home) {
 
-        } else if (id == R.id.navigation_dashboard) {
+        }/* else if (id == R.id.navigation_dashboard) {
             fragmentName = BrowseFragment;
             replaceFragment(fragmentName);
         } else if (id == R.id.navigation_sessions) {
@@ -144,7 +156,7 @@ public class DrawerActivity extends AppCompatActivity
         } else if (id == R.id.navigation_myadds) {
             fragmentName = MyAddsFragment;
             replaceFragment(fragmentName);
-        }
+        }*/
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -173,5 +185,38 @@ public class DrawerActivity extends AppCompatActivity
             ft.commitAllowingStateLoss();
         }
 
+    }
+
+    @Override
+    public void onClick(View view) {
+
+        Fragment fragmentName = null;
+        Fragment CourseSessionFragment = new CourseSessionFragment();
+        Fragment BrowseFragment = new BrowseFragment();
+        Fragment MySessionsFragment = new MySessionsFragment();
+        Fragment NotificationsFragment = new NotificationsFragment();
+        Fragment MyAddsFragment = new MyAddsFragment();
+
+        switch (view.getId()) {
+            case R.id.img_add:
+
+                break;
+            case R.id.img_course_search:
+                fragmentName = BrowseFragment;
+                replaceFragment(fragmentName);
+                break;
+            case R.id.img_home_page:
+                fragmentName = CourseSessionFragment;
+                replaceFragment(fragmentName);
+                break;
+            case R.id.img_notification:
+                fragmentName = NotificationsFragment;
+                replaceFragment(fragmentName);
+                break;
+            case R.id.img_adds:
+                fragmentName = MyAddsFragment;
+                replaceFragment(fragmentName);
+                break;
+        }
     }
 }
