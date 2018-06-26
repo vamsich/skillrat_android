@@ -45,9 +45,9 @@ public class BrowseFragment extends Fragment
 
         Toolbar toolbar = (Toolbar) rootview.findViewById(R.id.browsetoolbar);
 
-        toolbar.setTitle("Complete Sessions");
+        toolbar.setTitle("");
         ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
-        toolbar.setNavigationIcon(getResources().getDrawable(R.drawable.ic_arrow_back_white_18dp));
+        /*toolbar.setNavigationIcon(getResources().getDrawable(R.drawable.ic_arrow_back_white_18dp));
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,7 +55,7 @@ public class BrowseFragment extends Fragment
                 getActivity().onBackPressed();
 
             }
-        });
+        });*/
 
         recyclerView = (RecyclerView) rootview.findViewById(R.id.recycler_view);
 

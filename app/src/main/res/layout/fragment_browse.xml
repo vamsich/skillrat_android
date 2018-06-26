@@ -6,10 +6,23 @@
     android:background="#DDDBDC"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <include
+    <android.support.v7.widget.Toolbar
         android:id="@+id/browsetoolbar"
-        layout="@layout/toolbar" />
+        android:layout_width="match_parent"
+        android:background="#1e678a"
+        android:layout_height="?attr/actionBarSize"
+        android:elevation="1dp">
 
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/backdrop_subtitle"
+            android:text="Complete Sessions" />
+
+    </android.support.v7.widget.Toolbar>
 
     <LinearLayout
         android:id="@+id/linear_1"
