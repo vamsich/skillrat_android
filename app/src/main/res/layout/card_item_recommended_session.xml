@@ -47,7 +47,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Instructor : " />
+                            android:text="Instructor      : " />
 
                         <TextView
                             android:id="@+id/tv_instructor_name"
@@ -94,7 +94,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:maxLines="1"
-                            android:text="$30" />
+                            android:text="$30   " />
 
                         <TextView
                             android:id="@+id/tv_instructor_course_discounted_price"
@@ -125,7 +125,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Starting Day : " />
+                            android:text="Start From : " />
 
                         <TextView
                             android:id="@+id/tv_instructor_course_starting_date"
@@ -146,7 +146,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Duration : " />
+                            android:text="Duration     : " />
 
                         <TextView
                             android:id="@+id/tv_instructor_course_duration"
@@ -166,7 +166,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Rating : " />
+                            android:text="Rating         : " />
 
 
                         <RatingBar
