@@ -1,15 +1,19 @@
 package com.skillrat.myapp;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -26,7 +30,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class CourseSessionFragment extends Fragment {
+public class CourseSessionFragment extends Fragment implements TextWatcher {
 
 
     ArrayList<RecommendedCourses> recommendedCourses;
@@ -55,6 +59,7 @@ public class CourseSessionFragment extends Fragment {
         final View rootView = inflater.inflate(R.layout.recommended_courses, container, false);
         rv = (RecyclerView) rootView.findViewById(R.id.recycler_view_recommended);
         et_search_filter = (EditText) rootView.findViewById(R.id.et_search_filter);
+        et_search_filter.addTextChangedListener(this);
         bt_search = (Button) rootView.findViewById(R.id.bt_search);
         rv.setHasFixedSize(true);
         rv.setFocusable(false);
@@ -68,6 +73,10 @@ public class CourseSessionFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
+                if (!et_search_filter.getText().toString().equals("")) {
+                    InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+                    imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+                }
             }
         });
         prepareData();
@@ -239,4 +248,19 @@ public class CourseSessionFragment extends Fragment {
         });
     }
 
+    @Override
+    public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+    }
+
+    @Override
+    public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+        adapterRecommendedSession.getFilter().filter(et_search_filter.getText().toString());
+        adapterInDemandSession.getFilter().filter(et_search_filter.getText().toString());
+    }
+
+    @Override
+    public void afterTextChanged(Editable editable) {
+
+    }
 }

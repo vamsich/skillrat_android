@@ -10,8 +10,8 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
+        android:layout_height="150dp"
+        android:scaleType="fitXY"
         android:src="@drawable/main_cover"
         />
 
@@ -29,7 +29,7 @@
             android:id="@+id/et_search_filter"
             android:hint="Enter Course Name"
             android:padding="10dp"
-            android:textColorHint="@color/sideNavBarColor" />
+            android:textColorHint="@color/textColorHint" />
 
         <Button
             android:layout_width="match_parent"
