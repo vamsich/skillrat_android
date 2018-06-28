@@ -2,11 +2,14 @@ package com.skillrat.myapp;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.graphics.drawable.DrawableCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -25,11 +28,15 @@ import com.skillrat.myapp.fragments.MySessionsFragment;
 import com.skillrat.myapp.fragments.NotificationsFragment;
 import com.skillrat.myapp.skillrat.R;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class DrawerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, BottomNavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
     RatingBar tv_instructor_rating;
-    ImageView img_add, img_course_search, img_home_page, img_notification, img_adds;
+    ImageView img_add, img_course_search, img_notification, img_adds;
+    private Vibrator myVib;
+    CircleImageView img_home_page;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,10 +56,12 @@ public class DrawerActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        myVib = (Vibrator) this.getSystemService(VIBRATOR_SERVICE);
+
 
         img_add = (ImageView) findViewById(R.id.img_add);
         img_course_search = (ImageView) findViewById(R.id.img_course_search);
-        img_home_page = (ImageView) findViewById(R.id.img_home_page);
+        img_home_page = (CircleImageView) findViewById(R.id.img_home_page);
         img_notification = (ImageView) findViewById(R.id.img_notification);
         img_adds = (ImageView) findViewById(R.id.img_adds);
 
@@ -61,6 +70,8 @@ public class DrawerActivity extends AppCompatActivity
         img_notification.setOnClickListener(this);
         img_home_page.setOnClickListener(this);
         img_adds.setOnClickListener(this);
+
+
       /*  BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(this);
         navigation.getMenu().getItem(2).setChecked(true);*/
@@ -200,22 +211,100 @@ public class DrawerActivity extends AppCompatActivity
         switch (view.getId()) {
             case R.id.img_add:
 
+
+                setBottomButtonColor(R.id.img_add);
                 break;
+
             case R.id.img_course_search:
                 fragmentName = BrowseFragment;
                 replaceFragment(fragmentName);
+
+
+                setBottomButtonColor(R.id.img_course_search);
                 break;
+
             case R.id.img_home_page:
+                myVib.vibrate(50);
                 fragmentName = CourseSessionFragment;
                 replaceFragment(fragmentName);
+
+                setBottomButtonColor(R.id.img_home_page);
                 break;
+
             case R.id.img_notification:
                 fragmentName = NotificationsFragment;
                 replaceFragment(fragmentName);
+
+                setBottomButtonColor(R.id.img_notification);
                 break;
+
             case R.id.img_adds:
                 fragmentName = MyAddsFragment;
                 replaceFragment(fragmentName);
+
+                setBottomButtonColor(R.id.img_adds);
+                break;
+        }
+    }
+
+    public void setBottomButtonColor(int imageView) {
+        myVib.vibrate(50);
+        switch (imageView) {
+
+            case R.id.img_add:
+
+                DrawableCompat.setTint(img_add.getDrawable(), ContextCompat.getColor(this, R.color.colorBlack));
+                DrawableCompat.setTint(img_course_search.getDrawable(), ContextCompat.getColor(this, R.color.sideNavBarColor));
+                DrawableCompat.setTint(img_notification.getDrawable(), ContextCompat.getColor(this, R.color.sideNavBarColor));
+                DrawableCompat.setTint(img_adds.getDrawable(), ContextCompat.getColor(this, R.color.sideNavBarColor));
+                img_home_page.setBorderColor(ContextCompat.getColor(this, R.color.colorWhite));
+                img_home_page.setBorderWidth(0);
+
+                break;
+
+            case R.id.img_course_search:
+
+                DrawableCompat.setTint(img_add.getDrawable(), ContextCompat.getColor(this, R.color.sideNavBarColor));
+                DrawableCompat.setTint(img_course_search.getDrawable(), ContextCompat.getColor(this, R.color.colorBlack));
+                DrawableCompat.setTint(img_notification.getDrawable(), ContextCompat.getColor(this, R.color.sideNavBarColor));
+                DrawableCompat.setTint(img_adds.getDrawable(), ContextCompat.getColor(this, R.color.sideNavBarColor));
+                img_home_page.setBorderColor(ContextCompat.getColor(this, R.color.colorWhite));
+                img_home_page.setBorderWidth(0);
+
+                break;
+
+            case R.id.img_notification:
+
+                DrawableCompat.setTint(img_add.getDrawable(), ContextCompat.getColor(this, R.color.sideNavBarColor));
+                DrawableCompat.setTint(img_course_search.getDrawable(), ContextCompat.getColor(this, R.color.sideNavBarColor));
+                DrawableCompat.setTint(img_notification.getDrawable(), ContextCompat.getColor(this, R.color.colorBlack));
+                DrawableCompat.setTint(img_adds.getDrawable(), ContextCompat.getColor(this, R.color.sideNavBarColor));
+                img_home_page.setBorderColor(ContextCompat.getColor(this, R.color.colorWhite));
+                img_home_page.setBorderWidth(0);
+
+                break;
+
+            case R.id.img_adds:
+
+                DrawableCompat.setTint(img_add.getDrawable(), ContextCompat.getColor(this, R.color.sideNavBarColor));
+                DrawableCompat.setTint(img_course_search.getDrawable(), ContextCompat.getColor(this, R.color.sideNavBarColor));
+                DrawableCompat.setTint(img_notification.getDrawable(), ContextCompat.getColor(this, R.color.sideNavBarColor));
+                DrawableCompat.setTint(img_adds.getDrawable(), ContextCompat.getColor(this, R.color.colorBlack));
+                img_home_page.setBorderColor(ContextCompat.getColor(this, R.color.colorWhite));
+                img_home_page.setBorderWidth(0);
+
+                break;
+
+
+            case R.id.img_home_page:
+
+                DrawableCompat.setTint(img_add.getDrawable(), ContextCompat.getColor(this, R.color.sideNavBarColor));
+                DrawableCompat.setTint(img_course_search.getDrawable(), ContextCompat.getColor(this, R.color.sideNavBarColor));
+                DrawableCompat.setTint(img_notification.getDrawable(), ContextCompat.getColor(this, R.color.sideNavBarColor));
+                DrawableCompat.setTint(img_adds.getDrawable(), ContextCompat.getColor(this, R.color.sideNavBarColor));
+                img_home_page.setBorderColor(ContextCompat.getColor(this, R.color.colorBlack));
+                img_home_page.setBorderWidth(1);
+
                 break;
         }
     }

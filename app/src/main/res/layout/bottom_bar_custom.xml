@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#00000000"
     android:gravity="bottom">
 
@@ -14,66 +15,92 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="bottom"
-        >
+        android:gravity="bottom">
 
-        <ImageView
-            android:id="@+id/img_add"
+        <com.balysv.materialripple.MaterialRippleLayout
+            android:id="@+id/ripple_img_home"
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_gravity="bottom"
-            android:layout_marginTop="10dp"
-            android:layout_weight="1"
+            android:layout_height="50dp">
 
-            android:background="#fff"
-            android:padding="5dp"
-            android:src="@drawable/baseline_add_black_24dp"
-            android:tint="@color/sideNavBarColor" />
+            <ImageView
+                android:id="@+id/img_add"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:src="@drawable/baseline_home_black_24dp"
+                android:tint="@color/sideNavBarColor" />
 
-        <ImageView
-            android:id="@+id/img_course_search"
+        </com.balysv.materialripple.MaterialRippleLayout>
+
+
+        <com.balysv.materialripple.MaterialRippleLayout
+            android:id="@+id/ripple_img_course_search"
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_gravity="bottom"
-            android:layout_marginTop="10dp"
-            android:layout_weight="1"
-            android:background="#fff"
-            android:padding="5dp"
-            android:src="@drawable/baseline_search_black_24dp"
-            android:tint="@color/sideNavBarColor" />
+            android:layout_height="50dp">
+
+            <ImageView
+                android:id="@+id/img_course_search"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:src="@drawable/baseline_search_black_24dp"
+                android:tint="@color/sideNavBarColor" />
+        </com.balysv.materialripple.MaterialRippleLayout>
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/img_home_page"
-            android:layout_width="70dp"
+            android:layout_width="118dp"
             android:layout_height="70dp"
             android:layout_weight="1"
             android:paddingTop="@dimen/nav_header_vertical_spacing"
-
             android:src="@drawable/ic_main_icon" />
 
-        <ImageView
-            android:id="@+id/img_notification"
+        <com.balysv.materialripple.MaterialRippleLayout
+            android:id="@+id/ripple_img_notify"
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_gravity="bottom"
-            android:layout_marginTop="10dp"
-            android:layout_weight="1"
-            android:background="#fff"
-            android:padding="5dp"
-            android:src="@drawable/baseline_notifications_none_black_24dp"
-            android:tint="@color/sideNavBarColor" />
+            android:layout_height="50dp">
 
-        <ImageView
-            android:id="@+id/img_adds"
+            <ImageView
+                android:id="@+id/img_notification"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:src="@drawable/baseline_notifications_none_black_24dp"
+                android:tint="@color/sideNavBarColor" />
+
+        </com.balysv.materialripple.MaterialRippleLayout>
+
+
+        <com.balysv.materialripple.MaterialRippleLayout
+            android:id="@+id/ripple_img_adds"
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_gravity="bottom"
-            android:layout_marginTop="10dp"
-            android:layout_weight="1"
-            android:background="#fff"
-            android:padding="5dp"
-            android:src="@drawable/baseline_person_black_24dp"
-            android:tint="@color/sideNavBarColor" />
+            android:layout_height="50dp">
+
+            <ImageView
+                android:id="@+id/img_adds"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:src="@drawable/baseline_person_black_24dp"
+                android:tint="@color/sideNavBarColor" />
+
+        </com.balysv.materialripple.MaterialRippleLayout>
 
     </LinearLayout>
 
